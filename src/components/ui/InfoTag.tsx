@@ -14,7 +14,7 @@ export default function InfoTag({ term }: Props) {
   const tooltipLeft = rect
     ? Math.min(Math.max(rect.left + rect.width / 2 - 128, 8), window.innerWidth - 272)
     : 0
-  const showBelow = rect ? rect.top < 220 : false
+  const showBelow = rect ? rect.top < window.innerHeight * 0.55 : false
 
   return (
     <span
