@@ -41,7 +41,7 @@ export default function ActivationFunnelTab() {
   return (
     <div className="space-y-4">
       <PmCommentary
-        text="Referral-sourced users convert at 6.8% — 2.2× the paid-search rate. Every ₹1 saved on CAC through referral growth = direct reinvestment capacity into AUM glide path. Priority: reduce Aadhaar OTP P95 drop-off to unlock the next KYC conversion point."
+        text="Referral converts at 6.8% — 2.2× paid search. Priority fix: Aadhaar OTP P95 at 495s is the single most diagnosable blocker in the KYC step."
         severity="insight"
       />
 
@@ -74,7 +74,7 @@ export default function ActivationFunnelTab() {
 
       {/* KYC commentary */}
       <PmCommentary
-        text="Aadhaar OTP P95 = 495s (>8 min tail). Diagnosis path: segment by carrier (BSNL/BSNL-MVNO overrepresented in P95 tail), by hour-of-day (SMS gateway throttling after 10 PM), and by retry attempts. Fix: auto-retry with exponential backoff + fallback to DigiLocker Aadhaar pull."
+        text="Aadhaar OTP P95 = 495s. Segment by carrier and time-of-day to find the drop-off pattern. Fix: exponential backoff retry + DigiLocker fallback."
         severity="warning"
       />
 
@@ -128,12 +128,14 @@ export default function ActivationFunnelTab() {
                 <span className="text-xs text-zinc-500 truncate">{row.channel}</span>
                 <div className="flex items-center gap-1.5 flex-shrink-0">
                   <TrendIcon trend={row.trend === 'up' ? 'down' : row.trend === 'down' ? 'up' : 'flat'} />
-                  <span className="font-mono text-xs text-zinc-200">
-                    {row.cac === 0 ? '₹0' : `₹${row.cac}`}
-                  </span>
+                  {row.cac === 0
+                    ? <span className="text-xs text-zinc-500">— *</span>
+                    : <span className="font-mono text-xs text-zinc-200">₹{row.cac}</span>
+                  }
                 </div>
               </div>
             ))}
+          <div className="mt-3 text-[10px] text-zinc-600">* Organic excludes SEO/content costs</div>
           </div>
         </Card>
       </div>

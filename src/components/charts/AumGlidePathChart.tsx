@@ -35,7 +35,7 @@ export default function AumGlidePathChart() {
           <div className="font-mono text-3xl font-semibold text-zinc-50">
             ₹{currentAum.aum.toLocaleString('en-IN')} Cr
           </div>
-          <div className="text-zinc-500 text-xs mt-1">Total AUM · Jun 2026</div>
+          <div className="text-zinc-500 text-xs mt-1">Total AUM · Jun 2026 <span className="text-zinc-700">· all values in ₹ Crore</span></div>
         </div>
         {latestGlide !== null && (
           <div
@@ -70,12 +70,12 @@ export default function AumGlidePathChart() {
             dy={6}
           />
           <YAxis
-            tickFormatter={formatY}
-            tick={{ fill: '#71717A', fontSize: 11 }}
+            tickFormatter={(v: number) => `₹${v.toLocaleString('en-IN')} Cr`}
+            tick={{ fill: '#71717A', fontSize: 10 }}
             axisLine={false}
             tickLine={false}
             domain={[2500, 9000]}
-            width={44}
+            width={72}
           />
           <Tooltip
             contentStyle={tooltipStyle}

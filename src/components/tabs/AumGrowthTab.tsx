@@ -54,6 +54,7 @@ export default function AumGrowthTab() {
               deltaPositive={true}
               sparklineData={bookingSeries}
               sparklineColor="#10B981"
+              subtitle="bookings per user / month"
             />
             <MetricTile
               title="Avg Ticket Size"

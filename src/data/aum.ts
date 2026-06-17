@@ -15,11 +15,11 @@ export const aumTimeSeries: AumDataPoint[] = [
 
 // Net AUM waterfall for Jun 2026 (May ending → Jun ending)
 export const aumWaterfall: WaterfallItem[] = [
-  { name: 'Start',        base: 0,    value: 7150, type: 'total'    },
-  { name: '+Deposits',    base: 7150, value: 1200, type: 'positive' },
-  { name: '−Maturities', base: 8050, value: 300,  type: 'negative' },
-  { name: '−Premature',  base: 7950, value: 100,  type: 'negative' },
-  { name: 'End',          base: 0,    value: 7950, type: 'total'    },
+  { name: 'Starting AUM',       base: 0,    value: 7150, type: 'total'    },
+  { name: '+New Deposits',      base: 7150, value: 1200, type: 'positive' },
+  { name: '−Mat. Exits',        base: 8050, value: 300,  type: 'negative' },
+  { name: '−Early Exits',       base: 7950, value: 100,  type: 'negative' },
+  { name: 'Ending AUM',         base: 0,    value: 7950, type: 'total'    },
 ]
 
 export const ticketDistribution: TicketBucket[] = [

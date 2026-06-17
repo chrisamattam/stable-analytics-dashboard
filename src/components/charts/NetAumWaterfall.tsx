@@ -28,7 +28,7 @@ export default function NetAumWaterfall() {
         <InfoTag term="Net AUM Growth" />
       </div>
       <div className="text-xs text-zinc-600 mb-4">
-        Starting AUM + inflows − exits = Ending AUM
+        Starting AUM + inflows − exits = Ending AUM <span className="text-zinc-700">· values in ₹ Crore</span>
       </div>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart
@@ -41,15 +41,17 @@ export default function NetAumWaterfall() {
             axisLine={false}
             tickLine={false}
             interval={0}
-            dy={6}
+            angle={-20}
+            textAnchor="end"
+            height={44}
           />
           <YAxis
             tick={{ fill: '#71717A', fontSize: 10 }}
             axisLine={false}
             tickLine={false}
             domain={[0, 9000]}
-            tickFormatter={v => `₹${(v / 1000).toFixed(0)}k`}
-            width={40}
+            tickFormatter={(v: number) => `₹${v.toLocaleString('en-IN')} Cr`}
+            width={72}
           />
           <Tooltip
             contentStyle={tooltipStyle}

@@ -22,7 +22,7 @@ function SectionHeader({ label, description }: { label: string; description: str
       <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-600 bg-zinc-800/60 border border-stroke rounded px-2.5 py-1">
         {label}
       </span>
-      <span className="text-xs text-zinc-600 italic">{description}</span>
+      <span className="text-xs text-zinc-400">{description}</span>
     </div>
   )
 }
@@ -37,7 +37,7 @@ export default function TrustCompoundingTab() {
       />
 
       <PmCommentary
-        text="Every +1pp in reinvestment rate at current AUM scale (~₹7,950 Cr) = ~₹80 Cr staying on-platform per maturity cycle instead of exiting. At 3% annualised average maturity yield, that's ~₹2.4 Cr saved CAC equivalence. The trend line here is the trust thesis made quantitative."
+        text="Every +1pp in reinvestment rate = ~₹80 Cr retained per maturity cycle. A rising reinvestment trend means compounding AUM without new CAC spend."
         severity="positive"
       />
 
@@ -57,7 +57,7 @@ export default function TrustCompoundingTab() {
       />
 
       <PmCommentary
-        text="FD→Bond upgrade rate at 9.8% (90d window) with time-to-first-bond compressing from 142d → 98d across cohorts. The product surface for bond discovery (rate comparison, portfolio view) is working. Next threshold: if 90d upgrade rate crosses 12%, bond AUM crosses 10% of total — a key LTV signal."
+        text="Upgrade rate 9.8% (90d), TTFB down from 142d → 98d. Next signal: 12% upgrade rate = bond AUM at 10% of total — a key LTV threshold to watch."
         severity="insight"
       />
 
@@ -80,7 +80,7 @@ export default function TrustCompoundingTab() {
       />
 
       <PmCommentary
-        text="K-Factor at 0.16 and climbing — not viral, but structurally meaningful. At current MAI of 3.2L, each 0.01 increase in K-Factor = ~3,200 additional activations per 90-day referral cycle without incremental media spend. The TTFR compression (62d → 38d) suggests users are reaching trust threshold faster in newer cohorts."
+        text="K=0.16, rising — each +0.01 = ~3,200 free activations per cycle at current MAI. TTFR compressing 62d → 38d means users are trusting the platform faster in newer cohorts."
         severity="positive"
       />
 
