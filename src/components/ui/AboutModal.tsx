@@ -65,7 +65,7 @@ export default function AboutModal({ open, onClose }: Props) {
               chrisamattam@gmail.com
             </a>
             <a
-              href="https://github.com/chrismattam"
+              href="https://github.com/chrisamattam/stable-analytics-dashboard"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-accent transition-colors"
