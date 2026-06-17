@@ -17,8 +17,8 @@ export const aumTimeSeries: AumDataPoint[] = [
 export const aumWaterfall: WaterfallItem[] = [
   { name: 'Starting AUM',              base: 0,    value: 7150, type: 'total'    },
   { name: 'New Deposits',              base: 7150, value: 1200, type: 'positive' },
-  { name: 'Maturities\nNot Reinvested', base: 8050, value: 300,  type: 'negative' },
-  { name: 'Premature\nWithdrawals',    base: 7950, value: 100,  type: 'negative' },
+  { name: 'Mat. Not Reinvested',        base: 8050, value: 300,  type: 'negative' },
+  { name: 'Premature Withdrawals',      base: 7950, value: 100,  type: 'negative' },
   { name: 'Ending AUM',               base: 0,    value: 7950, type: 'total'    },
 ]
 
