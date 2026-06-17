@@ -8,6 +8,7 @@ const tooltipStyle = {
   backgroundColor: '#141416',
   border: '1px solid #26262A',
   borderRadius: 8,
+  color: '#E4E4E7',
   fontSize: 12,
 }
 const tooltipItemStyle = { color: '#A1A1AA' }
