@@ -11,6 +11,7 @@ const tooltipStyle = {
   borderRadius: 8,
   fontSize: 12,
 }
+const tooltipItemStyle = { color: '#A1A1AA' }
 
 function formatY(v: number) {
   return `₹${(v / 1000).toFixed(0)}k`
@@ -76,6 +77,7 @@ export default function AumGlidePathChart() {
           <Tooltip
             contentStyle={tooltipStyle}
             labelStyle={{ color: '#FAFAFA', marginBottom: 4 }}
+            itemStyle={tooltipItemStyle}
             formatter={(value: number, name: string) => [
               `₹${value.toLocaleString('en-IN')} Cr`,
               name === 'aum' ? 'Actual AUM' : 'Glide Path Target',

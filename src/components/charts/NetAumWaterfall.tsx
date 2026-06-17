@@ -10,6 +10,7 @@ const tooltipStyle = {
   borderRadius: 8,
   fontSize: 12,
 }
+const tooltipItemStyle = { color: '#A1A1AA' }
 
 function barColor(type: string) {
   if (type === 'total')    return COLORS.accent
@@ -50,6 +51,7 @@ export default function NetAumWaterfall() {
           <Tooltip
             contentStyle={tooltipStyle}
             labelStyle={{ color: '#FAFAFA', marginBottom: 4 }}
+            itemStyle={tooltipItemStyle}
             formatter={(value: number, name: string) => {
               if (name === 'base') return null
               return [`₹${value.toLocaleString('en-IN')} Cr`, 'Amount']

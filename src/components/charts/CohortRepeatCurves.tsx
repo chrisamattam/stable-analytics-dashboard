@@ -11,6 +11,7 @@ const tooltipStyle = {
   borderRadius: 8,
   fontSize: 12,
 }
+const tooltipItemStyle = { color: '#A1A1AA' }
 
 export default function CohortRepeatCurves() {
   return (
@@ -43,6 +44,7 @@ export default function CohortRepeatCurves() {
           <Tooltip
             contentStyle={tooltipStyle}
             labelStyle={{ color: '#FAFAFA', marginBottom: 4 }}
+            itemStyle={tooltipItemStyle}
             labelFormatter={(label: number) => `Day ${label}`}
             formatter={(value: unknown, name: string) => {
               if (value == null || typeof value !== 'number') return ['—', name]

@@ -11,6 +11,7 @@ const tooltipStyle = {
   borderRadius: 8,
   fontSize: 12,
 }
+const tooltipItemStyle = { color: '#A1A1AA' }
 
 export default function ReinvestmentRateChart() {
   const current = reinvestmentSeries[reinvestmentSeries.length - 1]
@@ -53,6 +54,7 @@ export default function ReinvestmentRateChart() {
           <Tooltip
             contentStyle={tooltipStyle}
             labelStyle={{ color: '#FAFAFA', marginBottom: 4 }}
+            itemStyle={tooltipItemStyle}
             formatter={(value: number) => [`${value.toFixed(1)}%`, 'Reinvestment Rate']}
           />
           <ReferenceLine

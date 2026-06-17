@@ -13,6 +13,7 @@ const tooltipStyle = {
   borderRadius: 8,
   fontSize: 12,
 }
+const tooltipItemStyle = { color: '#A1A1AA' }
 
 const windowOptions = [
   { label: '90d',  value: '90d'  },
@@ -70,6 +71,7 @@ export default function FdToBondsUpgradeChart() {
           <Tooltip
             contentStyle={tooltipStyle}
             labelStyle={{ color: '#FAFAFA', marginBottom: 4 }}
+            itemStyle={tooltipItemStyle}
             formatter={(value: number) => [`${value.toFixed(1)}%`, `Upgrade Rate (${window})`]}
           />
           <Line

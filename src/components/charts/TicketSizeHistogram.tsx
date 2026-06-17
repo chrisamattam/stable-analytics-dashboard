@@ -11,6 +11,7 @@ const tooltipStyle = {
   borderRadius: 8,
   fontSize: 12,
 }
+const tooltipItemStyle = { color: '#A1A1AA' }
 
 // DICGC cap falls at the ₹5L+ bucket — we mark it at the boundary
 const DICGC_BUCKET_IDX = 4 // index of ₹5L+ bucket
@@ -55,6 +56,7 @@ export default function TicketSizeHistogram() {
           <Tooltip
             contentStyle={tooltipStyle}
             labelStyle={{ color: '#FAFAFA', marginBottom: 4 }}
+            itemStyle={tooltipItemStyle}
             formatter={(value: number) => [`${value}%`, 'Share of bookings']}
           />
           <Bar dataKey="pct" radius={[3, 3, 0, 0]}>
