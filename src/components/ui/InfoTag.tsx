@@ -14,6 +14,7 @@ export default function InfoTag({ term }: Props) {
   const tooltipLeft = rect
     ? Math.min(Math.max(rect.left + rect.width / 2 - 128, 8), window.innerWidth - 272)
     : 0
+  const showBelow = rect ? rect.top < 220 : false
 
   return (
     <span
@@ -30,8 +31,8 @@ export default function InfoTag({ term }: Props) {
           className="fixed z-[999] w-64 pointer-events-none"
           style={{
             left: tooltipLeft,
-            top: rect.top - 8,
-            transform: 'translateY(-100%)',
+            top: showBelow ? rect.bottom + 8 : rect.top - 8,
+            transform: showBelow ? 'none' : 'translateY(-100%)',
           }}
         >
           <div className="bg-[#1C1C1F] border border-[#26262A] rounded-lg px-3 py-3 shadow-2xl">
