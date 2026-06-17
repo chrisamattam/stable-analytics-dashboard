@@ -48,7 +48,12 @@ export default function ConcentrationCallout() {
           </span>
         </span>
       </div>
-      <span className="text-[10px] text-zinc-600 flex-shrink-0">Threshold: &gt;40% = RED</span>
+      <div className="flex items-center gap-2 text-[10px] text-zinc-600 flex-shrink-0">
+        <span>Top bank share:</span>
+        <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-positive inline-block" /> &lt;30% safe</span>
+        <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-warning inline-block" /> 30–40% watch</span>
+        <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-critical inline-block" /> &gt;40% risk</span>
+      </div>
     </div>
   )
 }
