@@ -37,9 +37,7 @@ export default function NetAumWaterfall() {
             axisLine={false}
             tickLine={false}
             interval={0}
-            angle={-30}
-            textAnchor="end"
-            height={52}
+            dy={6}
           />
           <YAxis
             tick={{ fill: '#71717A', fontSize: 10 }}

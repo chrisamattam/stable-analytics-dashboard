@@ -47,28 +47,31 @@ export default function FunnelStepChart({ steps, priorSteps, showComparison }: P
                 <span>{step.step}</span>
               </div>
 
-              {/* Bar track */}
-              <div className="flex-1 relative h-8">
-                {/* Prior period ghost bar */}
-                {showComparison && priorWidthPct !== null && (
+              {/* Bar + count + time */}
+              <div className="flex items-center gap-2 flex-1">
+                <div className="flex-1 relative h-8">
+                  {/* Prior period ghost bar */}
+                  {showComparison && priorWidthPct !== null && (
+                    <div
+                      className="absolute top-0 left-0 h-full rounded bg-zinc-700/30 border border-zinc-600/30 transition-all"
+                      style={{ width: `${priorWidthPct}%` }}
+                    />
+                  )}
+                  {/* Current period bar — no text inside */}
                   <div
-                    className="absolute top-0 left-0 h-full rounded bg-zinc-700/30 border border-zinc-600/30 transition-all"
-                    style={{ width: `${priorWidthPct}%` }}
+                    className="absolute top-0 left-0 h-full rounded bg-accent/80 transition-all"
+                    style={{ width: `${widthPct}%`, minWidth: 8 }}
                   />
-                )}
-                {/* Current period bar */}
-                <div
-                  className="absolute top-0 left-0 h-full rounded bg-accent/80 flex items-center px-2 transition-all"
-                  style={{ width: `${widthPct}%`, minWidth: 32 }}
-                >
-                  <span className="text-[10px] font-mono text-white/80 truncate">
-                    {step.count.toLocaleString('en-IN')}
-                  </span>
                 </div>
+
+                {/* Count — always outside the bar */}
+                <span className="text-[11px] font-mono text-zinc-300 w-16 flex-shrink-0">
+                  {step.count.toLocaleString('en-IN')}
+                </span>
 
                 {/* P50 time badge */}
                 {step.p50s !== null && (
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full pl-2 flex items-center gap-1 text-[10px] text-zinc-500">
+                  <div className="flex items-center gap-1 text-[10px] text-zinc-500 flex-shrink-0">
                     <Clock size={9} />
                     <span>{formatTime(step.p50s)}</span>
                   </div>
