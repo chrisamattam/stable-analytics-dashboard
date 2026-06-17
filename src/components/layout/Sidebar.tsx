@@ -19,7 +19,7 @@ export default function Sidebar() {
       <aside className="w-[220px] flex-shrink-0 bg-card border-r border-stroke flex flex-col">
         <div className="px-5 py-5 border-b border-stroke">
           <div className="text-zinc-50 font-semibold text-base tracking-tight">Stable Money</div>
-          <div className="text-zinc-600 text-xs mt-0.5 font-medium uppercase tracking-widest">PM Dashboard</div>
+          <div className="text-zinc-600 text-xs mt-0.5 font-medium uppercase tracking-widest">Product Dashboard</div>
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-0.5">
