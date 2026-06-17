@@ -4,6 +4,7 @@ import {
 } from 'recharts'
 import { reinvestmentSeries } from '../../data/bond'
 import { COLORS } from '../../lib/colors'
+import InfoTag from '../ui/InfoTag'
 
 const tooltipStyle = {
   backgroundColor: '#141416',
@@ -21,8 +22,9 @@ export default function ReinvestmentRateChart() {
 
   return (
     <div>
-      <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
+      <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
         Reinvestment at Maturity Rate
+        <InfoTag term="Reinvestment at Maturity Rate" />
       </div>
       <div className="flex items-baseline gap-3 mb-4">
         <div className="font-mono text-3xl font-semibold text-zinc-50">

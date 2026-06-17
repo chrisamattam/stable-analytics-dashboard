@@ -105,6 +105,7 @@ export default function TrustCompoundingTab() {
             deltaPositive={refRateDelta >= 0}
             sparklineData={refRateSeries}
             sparklineColor="#10B981"
+            glossaryTerm="Referral Rate"
           />
           <MetricTile
             title="TTFR (Median)"
@@ -113,6 +114,7 @@ export default function TrustCompoundingTab() {
             deltaPositive={ttfrDelta < 0}
             sparklineData={referralSeries.map(d => d.ttfrMedianDays)}
             sparklineColor="#A855F7"
+            glossaryTerm="TTFR (Time to First Referral)"
           />
         </div>
       </div>

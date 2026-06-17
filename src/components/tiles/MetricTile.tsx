@@ -1,4 +1,5 @@
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react'
+import InfoTag from '../ui/InfoTag'
 
 interface SparklineProps {
   data: number[]
@@ -43,6 +44,7 @@ interface MetricTileProps {
   sparklineColor?: string
   subtitle?: string
   mono?: boolean
+  glossaryTerm?: string
 }
 
 export default function MetricTile({
@@ -54,6 +56,7 @@ export default function MetricTile({
   sparklineColor = '#3B82F6',
   subtitle,
   mono = true,
+  glossaryTerm,
 }: MetricTileProps) {
   const deltaColor =
     deltaPositive === true
@@ -71,8 +74,11 @@ export default function MetricTile({
 
   return (
     <div className="bg-card border border-stroke rounded-xl p-5 flex flex-col gap-3">
-      <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
-        {title}
+      <div className="flex items-center">
+        <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
+          {title}
+        </div>
+        {glossaryTerm && <InfoTag term={glossaryTerm} />}
       </div>
       <div className={`text-2xl font-semibold leading-none ${mono ? 'font-mono' : ''} text-zinc-50`}>
         {value}

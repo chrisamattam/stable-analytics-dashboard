@@ -4,6 +4,7 @@ import {
 } from 'recharts'
 import { cohortRepeatCurves } from '../../data/cohorts'
 import { COLORS } from '../../lib/colors'
+import InfoTag from '../ui/InfoTag'
 
 const tooltipStyle = {
   backgroundColor: '#141416',
@@ -17,8 +18,9 @@ const tooltipItemStyle = { color: '#A1A1AA' }
 export default function CohortRepeatCurves() {
   return (
     <div>
-      <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
+      <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
         Cohort Repeat-Booking Curves
+        <InfoTag term="Cohort Repeat Rate" />
       </div>
       <div className="text-xs text-zinc-600 mb-4">
         % users with ≥2 bookings · by days since first deposit

@@ -6,6 +6,7 @@ import {
 import { bondSeries, currentBond, priorBond } from '../../data/bond'
 import { COLORS } from '../../lib/colors'
 import PeriodToggle from '../ui/PeriodToggle'
+import InfoTag from '../ui/InfoTag'
 
 const tooltipStyle = {
   backgroundColor: '#141416',
@@ -32,8 +33,9 @@ export default function FdToBondsUpgradeChart() {
   return (
     <div>
       <div className="flex items-start justify-between mb-1">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
+        <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
           FD → Bonds Upgrade Rate
+          <InfoTag term="FD → Bonds Upgrade Rate" />
         </div>
         <PeriodToggle
           options={windowOptions}

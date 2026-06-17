@@ -4,6 +4,7 @@ import {
 } from 'recharts'
 import { referralSeries, currentReferral, priorReferral } from '../../data/referral'
 import { COLORS } from '../../lib/colors'
+import InfoTag from '../ui/InfoTag'
 
 const tooltipStyle = {
   backgroundColor: '#141416',
@@ -19,8 +20,9 @@ export default function KFactorTrendChart() {
 
   return (
     <div>
-      <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
+      <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
         K-Factor (Viral Coefficient)
+        <InfoTag term="K-Factor (Viral Coefficient)" />
       </div>
       <div className="flex items-baseline gap-3 mb-1">
         <div className="font-mono text-3xl font-semibold text-zinc-50">

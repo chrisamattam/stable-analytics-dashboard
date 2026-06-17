@@ -1,6 +1,7 @@
 import { AlertTriangle } from 'lucide-react'
 import type { KycSubStep } from '../../types/metrics'
 import { COLORS } from '../../lib/colors'
+import InfoTag from '../ui/InfoTag'
 
 interface Props {
   subSteps: KycSubStep[]
@@ -22,8 +23,9 @@ export default function KycSubstepChart({ subSteps }: Props) {
 
   return (
     <div className="bg-shell border border-stroke rounded-lg px-4 py-3 space-y-3">
-      <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-600 mb-1">
+      <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-600 mb-1">
         KYC Sub-steps
+        <InfoTag term="KYC Completion Rate" />
       </div>
       {subSteps.map(step => (
         <div key={step.name} className="space-y-1.5">
@@ -37,6 +39,9 @@ export default function KycSubstepChart({ subSteps }: Props) {
               >
                 {step.name}
               </span>
+              {step.name === 'Aadhaar OTP' && (
+                <InfoTag term="Aadhaar OTP P95 Latency" />
+              )}
             </div>
             <div className="flex items-center gap-3 text-[10px] font-mono">
               <span className="text-zinc-500">P50 {step.p50s}s</span>

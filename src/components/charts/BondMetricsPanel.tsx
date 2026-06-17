@@ -1,12 +1,14 @@
 import { bondRepeatRates, currentBond } from '../../data/bond'
+import InfoTag from '../ui/InfoTag'
 
 export default function BondMetricsPanel() {
   return (
     <div className="space-y-5">
       {/* Bond Repeat Purchase Rate table */}
       <div>
-        <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-3">
+        <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-3">
           Bond Repeat Purchase Rate
+          <InfoTag term="Bond Repeat Purchase Rate" />
         </div>
         <div className="space-y-2">
           {bondRepeatRates.map(row => (
@@ -28,8 +30,9 @@ export default function BondMetricsPanel() {
 
       {/* Avg bond purchases */}
       <div className="border-t border-stroke pt-4">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-2">
+        <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-2">
           Avg Bond Purchases / Bond-Active User
+          <InfoTag term="Avg Bond Purchases per Bond-Active User" />
         </div>
         <div className="flex items-baseline gap-2">
           <span className="font-mono text-2xl font-semibold text-zinc-50">
@@ -41,8 +44,9 @@ export default function BondMetricsPanel() {
 
       {/* Time to first bond */}
       <div className="border-t border-stroke pt-4">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-2">
+        <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-2">
           Time to First Bond (Median)
+          <InfoTag term="Time to First Bond (TTFB)" />
         </div>
         <div className="flex items-baseline gap-2">
           <span className="font-mono text-2xl font-semibold text-zinc-50">

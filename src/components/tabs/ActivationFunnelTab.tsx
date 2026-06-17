@@ -8,6 +8,7 @@ import { currentFunnel, priorFunnel, conversionBySource, ttffdSeries } from '../
 import { cacByChannel } from '../../data/cac'
 import { formatPct } from '../../lib/formatters'
 import { TrendingUp, TrendingDown, Minus } from 'lucide-react'
+import InfoTag from '../ui/InfoTag'
 
 const periodOptions = [
   { label: 'Last 30d',  value: 'current'    },
@@ -48,8 +49,9 @@ export default function ActivationFunnelTab() {
       <Card>
         <div className="flex items-start justify-between mb-5">
           <div>
-            <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
+            <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
               Activation Funnel
+              <InfoTag term="Activation" />
             </div>
             <div className="text-xs text-zinc-600">
               Install → First Deposit · End-to-end{' '}
@@ -84,6 +86,7 @@ export default function ActivationFunnelTab() {
           delta={`${parseFloat(e2eDelta) >= 0 ? '+' : ''}${e2eDelta}pp MoM`}
           deltaPositive={parseFloat(e2eDelta) >= 0}
           sparklineData={e2eSeries}
+          glossaryTerm="End-to-End Funnel Conversion"
         />
         <MetricTile
           title="TTFFD (Median)"
@@ -92,6 +95,7 @@ export default function ActivationFunnelTab() {
           deltaPositive={ttffdDelta < 0}
           sparklineData={ttffdSeries.map(d => d.days)}
           sparklineColor="#10B981"
+          glossaryTerm="TTFFD (Time to First Fixed Deposit)"
         />
 
         {/* Conversion by source */}
@@ -114,8 +118,9 @@ export default function ActivationFunnelTab() {
 
         {/* CAC by channel */}
         <Card noPad className="col-span-1 p-4">
-          <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-3">
+          <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-3">
             CAC by Channel
+            <InfoTag term="CAC (Customer Acquisition Cost)" />
           </div>
           <div className="space-y-2">
             {cacByChannel.map(row => (

@@ -3,6 +3,7 @@ import {
 } from 'recharts'
 import { aumWaterfall } from '../../data/aum'
 import { COLORS } from '../../lib/colors'
+import InfoTag from '../ui/InfoTag'
 
 const tooltipStyle = {
   backgroundColor: '#141416',
@@ -22,8 +23,9 @@ function barColor(type: string) {
 export default function NetAumWaterfall() {
   return (
     <div>
-      <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
+      <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
         Net AUM Waterfall · Jun 2026
+        <InfoTag term="Net AUM Growth" />
       </div>
       <div className="text-xs text-zinc-600 mb-4">
         Starting AUM + inflows − exits = Ending AUM

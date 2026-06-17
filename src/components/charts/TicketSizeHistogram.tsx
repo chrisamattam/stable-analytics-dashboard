@@ -4,6 +4,7 @@ import {
 } from 'recharts'
 import { ticketDistribution } from '../../data/aum'
 import { COLORS } from '../../lib/colors'
+import InfoTag from '../ui/InfoTag'
 
 const tooltipStyle = {
   backgroundColor: '#141416',
@@ -21,8 +22,9 @@ export default function TicketSizeHistogram() {
   return (
     <div>
       <div className="flex items-start justify-between mb-1">
-        <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
+        <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500">
           Ticket Size Distribution
+          <InfoTag term="Avg Ticket Size" />
         </div>
       </div>
       <div className="flex items-center gap-3 mb-4">
@@ -32,6 +34,10 @@ export default function TicketSizeHistogram() {
         <span className="text-zinc-700">·</span>
         <div className="text-xs text-zinc-500">
           Median <span className="font-mono text-zinc-300 ml-1">₹65K</span>
+        </div>
+        <span className="text-zinc-700">·</span>
+        <div className="flex items-center text-xs text-warning/80">
+          DICGC cap ₹5L <InfoTag term="DICGC Cap" />
         </div>
       </div>
       <ResponsiveContainer width="100%" height={200}>

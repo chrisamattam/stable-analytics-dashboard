@@ -4,6 +4,7 @@ import {
 } from 'recharts'
 import { aumTimeSeries, currentAum } from '../../data/aum'
 import { COLORS } from '../../lib/colors'
+import InfoTag from '../ui/InfoTag'
 
 const tooltipStyle = {
   backgroundColor: '#141416',
@@ -27,8 +28,10 @@ export default function AumGlidePathChart() {
     <div>
       <div className="flex items-start justify-between mb-5">
         <div>
-          <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
+          <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
             AUM vs Glide Path
+            <InfoTag term="AUM (Assets Under Management)" />
+            <InfoTag term="Glide Path" />
           </div>
           <div className="font-mono text-3xl font-semibold text-zinc-50">
             ₹{currentAum.aum.toLocaleString('en-IN')} Cr

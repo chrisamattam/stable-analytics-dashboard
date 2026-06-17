@@ -1,4 +1,5 @@
 import Card from '../ui/Card'
+import InfoTag from '../ui/InfoTag'
 import AumGlidePathChart from '../charts/AumGlidePathChart'
 import NetAumWaterfall from '../charts/NetAumWaterfall'
 import TicketSizeHistogram from '../charts/TicketSizeHistogram'
@@ -44,6 +45,7 @@ export default function AumGrowthTab() {
               deltaPositive={true}
               sparklineData={maiSeries}
               sparklineColor="#3B82F6"
+              glossaryTerm="MAI (Monthly Active Investors)"
             />
             <MetricTile
               title="Avg FD Bookings / MAI"
@@ -60,6 +62,7 @@ export default function AumGrowthTab() {
               deltaPositive={true}
               sparklineData={ticketSeries}
               sparklineColor="#F59E0B"
+              glossaryTerm="Avg Ticket Size"
             />
           </div>
 
@@ -67,8 +70,9 @@ export default function AumGrowthTab() {
           <Card>
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
+                <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
                   Bond AUM % of Total
+                  <InfoTag term="Bond AUM % of Total AUM" />
                 </div>
                 <div className="font-mono text-2xl font-semibold text-zinc-50">
                   {formatPct(currentBond.aumPct)}

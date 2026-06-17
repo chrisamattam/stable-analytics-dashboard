@@ -1,4 +1,5 @@
 import { top1Pct, top3Pct, concentrationStatus } from '../../data/bankMix'
+import InfoTag from '../ui/InfoTag'
 
 export default function ConcentrationCallout() {
   const status = concentrationStatus(top1Pct)
@@ -23,9 +24,10 @@ export default function ConcentrationCallout() {
 
   return (
     <div className="bg-card border border-stroke rounded-xl px-5 py-3 flex items-center gap-6 text-sm">
-      <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 flex-shrink-0">
+      <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 flex-shrink-0">
         Partner Concentration
-      </span>
+        <InfoTag term="Partner Concentration Risk" />
+      </div>
       <div className="flex items-center gap-6 flex-1 flex-wrap">
         <span className="text-zinc-400">
           Top partner bank:{' '}
