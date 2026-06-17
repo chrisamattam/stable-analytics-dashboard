@@ -31,7 +31,6 @@ export default function AumGlidePathChart() {
           <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-1">
             AUM vs Glide Path
             <InfoTag term="AUM (Assets Under Management)" />
-            <InfoTag term="Glide Path" />
           </div>
           <div className="font-mono text-3xl font-semibold text-zinc-50">
             ₹{currentAum.aum.toLocaleString('en-IN')} Cr
