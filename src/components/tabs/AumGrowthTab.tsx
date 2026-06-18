@@ -31,7 +31,7 @@ export default function AumGrowthTab() {
       </Card>
 
       {/* Row 2: Waterfall + 3 metric tiles */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card>
           <NetAumWaterfall />
         </Card>

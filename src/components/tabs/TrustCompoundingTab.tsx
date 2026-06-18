@@ -41,7 +41,7 @@ export default function TrustCompoundingTab() {
         severity="positive"
       />
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card>
           <ReinvestmentRateChart />
         </Card>
@@ -61,11 +61,11 @@ export default function TrustCompoundingTab() {
         severity="insight"
       />
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <FdToBondsUpgradeChart />
         </Card>
-        <Card className="col-span-2">
+        <Card className="md:col-span-2">
           <div className="text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 mb-4">
             Bond Depth Metrics
           </div>
@@ -84,8 +84,8 @@ export default function TrustCompoundingTab() {
         severity="positive"
       />
 
-      <div className="grid grid-cols-3 gap-4">
-        <Card className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Card className="md:col-span-2">
           <KFactorTrendChart />
         </Card>
 

@@ -79,7 +79,7 @@ export default function ActivationFunnelTab() {
       />
 
       {/* Supporting metric tiles */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <MetricTile
           title="End-to-End Conversion"
           value={`${e2eConv}%`}

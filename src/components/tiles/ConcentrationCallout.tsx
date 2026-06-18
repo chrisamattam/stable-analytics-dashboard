@@ -17,7 +17,7 @@ export default function ConcentrationCallout() {
   }[status]
 
   return (
-    <div className="bg-card border border-stroke rounded-xl px-5 py-3 flex items-center gap-4">
+    <div className="bg-card border border-stroke rounded-xl px-5 py-3 flex flex-wrap items-center gap-x-4 gap-y-2">
 
       {/* Label */}
       <div className="flex items-center text-[10px] font-semibold uppercase tracking-[0.12em] text-zinc-500 flex-shrink-0">

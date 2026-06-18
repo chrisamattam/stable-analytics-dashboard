@@ -36,7 +36,7 @@ export default function FunnelStepChart({ steps, priorSteps, showComparison }: P
             <div className="flex items-center gap-3 py-1.5">
               {/* Step name */}
               <div
-                className={`w-36 flex-shrink-0 flex items-center gap-1.5 text-xs text-zinc-400 ${isKycStart ? 'cursor-pointer hover:text-zinc-200' : ''}`}
+                className={`w-24 sm:w-36 flex-shrink-0 flex items-center gap-1.5 text-xs text-zinc-400 ${isKycStart ? 'cursor-pointer hover:text-zinc-200' : ''}`}
                 onClick={isKycStart ? () => setKycExpanded(v => !v) : undefined}
               >
                 {isKycStart && (
@@ -81,7 +81,7 @@ export default function FunnelStepChart({ steps, priorSteps, showComparison }: P
 
             {/* KYC sub-step drill-down */}
             {isKycStart && kycExpanded && (
-              <div className="ml-[154px] mb-1 mt-1">
+              <div className="ml-[102px] sm:ml-[154px] mb-1 mt-1">
                 <KycSubstepChart subSteps={kycSubSteps} />
               </div>
             )}
@@ -89,7 +89,7 @@ export default function FunnelStepChart({ steps, priorSteps, showComparison }: P
             {/* Conversion arrow */}
             {!isLast && step.convToNext !== null && (
               <div className="flex items-center gap-3 py-0.5">
-                <div className="w-36 flex-shrink-0" />
+                <div className="w-24 sm:w-36 flex-shrink-0" />
                 <div className="flex items-center gap-2 text-[10px]">
                   <div className="w-0.5 h-3 bg-stroke ml-3" />
                   <span
